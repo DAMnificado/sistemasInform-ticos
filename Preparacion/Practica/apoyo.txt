@@ -1,0 +1,109 @@
+Particiones (windows CREAR Y FORMATEAR..)
+
+VER EL DISCO
+sudo parted -l
+
+CREAR PARTICION
+sudo fdisk /dev/sdb
+
+DAR SISTEMA DE ARCHIVOS
+sud mkfs.ext4 /dev/sdb2
+
+EXTENDER PARTICION
+sudo parted /dev/sdb
+resizepart
+
+Programar tareas
+
+cd /home
+CREAR CARPETAS
+sudo mkdir objetivo
+sudo mkdir destino
+
+CREAR ARC.DE TEXTO EN OBJETIVO
+cd objetivo
+sudo touch texto1.txt
+sudo touch texto2.txt
+
+CREAR UN EJECUTABLE
+sudo nano copia.sh
+(se abre nano)
+
+QUE HARÁ ESTE EJECUTABLE
+(dentro de nano)
+zcvf /home/objetivo/paquete.tar /home/destino
+
+DAMOS PERMISOS A COPIA.SH
+sudo chmod 777 copia.sh
+
+ABRIMOS EDITOR PARA PROGRAMAR LA TAREA
+(nano:1)
+sudo crontab -e
+
+ESCRIBIMOS CUANDO QUEREMOS QUE SE EJECUTE
+(en nano)
+
+25 7 4 3 * /home/copia.sh
+
+Permisos (ADMINISTRADOR DE EQUIPOS)
+
+MONTAR CARPETA EN PARTICION DE DISCO (SIEMPRE EXT4)
+sudo mkdir /actividades
+sudo mount /dev/sda1 /actividades
+
+VER PERMISOS 
+getfactl /actividades
+
+CREAR GRUPOS 
+sudo groupadd alumnado
+
+HACER CARPETA ESTUDIANTES EN ACTIVIDADES
+sudo mkdir /actividades/Estudiantes
+
+METER ALUMNADO EN ESTUDIANTES
+sudo chgrp alumnado /actividades/Estudiantes
+
+CALCULAMOS
+user (root) group (alumnado) resto
+R W X       R W X            R W X
+
+DAMOS PERMISOS
+sudo chmod 750 /actividades/Estudiantes
+
+CREAR UN ALUMNO (usuario)
+sudo adduser juanpa
+
+METERLO EN ALUMNADO
+sudo usermod -G alumnado juanpa
+
+
+Firewall
+
+ACTIVAR
+sudo ufw enable
+
+DESACTIVAR
+sudo ufw disable
+
+LISTA APPS
+sudo ufw app list
+
+INFO
+sudo ufw app info "nombre aplicacion"
+
+PERMITIR/DENEGAR PUERTOS DE UNA IP
+sudo ufw allow/deny from 434.1313.1313 to any port 2943
+
+PERMITIR/DENEGAR PUERTOS
+sudo ufw allow 607:532/tcp
+sudo ufw allow 607:532/udp
+
+VER LISTA DE PUERTOS ABIERTOS O CERRADOS
+sudo ufw status numbered
+
+RESETEAR
+sudo ufw reset
+
+
+
+

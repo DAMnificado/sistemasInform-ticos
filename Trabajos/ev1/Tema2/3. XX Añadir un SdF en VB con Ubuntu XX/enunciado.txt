@@ -1,0 +1,16 @@
+Crea un nuevo disco duro en una máquina virtual Ubuntu. 
+
+A continuación ejecuta el comando fdisk -l (haz captura) para ver que aparece el disco anterior.
+
+Usa el comando fdisk para crear una particion sobre el disco anterior.
+
+Usa fdisk -l (haz captura)  para ver que aparece la nueva partición.
+
+Formatea la partición anterior con el sistema de archivos ext4
+
+Crea una carpeta en el directorio raiz llamada sistemanuevo y monta la partición en dicha carpeta.
+
+Por último utiliza el comando df -h para listar los sistemas de ficheros que tenemos instalados (haz captura).
+
+Todas las capturas anteriores incorpóralas a un documento en formato PDF.
+
