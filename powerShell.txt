@@ -1,0 +1,42 @@
+verbo-sustantivo
+get-alias = para ver comandos
+
+get-childitem = dir (pero mas potente)
+
+git-help + get-(comando)
+get-help get-childitem = proporciona ayuda sobre dicho comando
+
+
+get-childitem | get-member
+
+con get-member ves propiedades de un objeto
+(en este caso el objeto que le paso como parámetro es get-childitem)
+
+
+$nombre="Paco"
+$numero=2
+
+De la siguiente manera vemos lo que hay en cada variable:
+
+$nombre (pulsas enter)
+Paco
+$numero (pulsas enter)
+2
+
+write-host($nombre)(pulsas enter))
+Paco
+
+
+CMD LETS
+Tipos de datos
+
+String
+char
+int
+long
+single
+double
+datetime
+bool
+array
+hashtable
